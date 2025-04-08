@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="sources/home.png" type="image/png">
+    <title>Submodulo 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00eaff;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            text-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00eaff, transparent);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .info-box:hover::before {
+            transform: translateX(100%);
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2),
+                        0 0 20px rgba(138, 43, 226, 0.1),
+                        0 0 40px rgba(138, 43, 226, 0.1);
+        }
+
+        .info-box h2 {
+            color: #00eaff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .info-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #00eaff, transparent);
+        }
+
+        .info-content {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #7b00ff;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(to top, rgba(30, 30, 30, 0.8), transparent);
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .info-box {
+                padding: 25px;
+            }
+        }
+        .v{
+          font-size: 25px;
+          color: lime;
+          margin-left: 10px;
+        }
+        .r{
+          font-size: 25px;
+          color: red;
+          margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SUBMODULO 1</h1>
+
+        <div class="grid-container">
+            <div class="info-box">
+                <h2>REGLAS</h2>
+                <div class="info-content">
+                    <p><li>Solicitar la práctica con anticipación para garantizar una mayor probabilidad de entrega puntual y en la forma adecuada.</li><br>
+                       <li>El vendedor decidirá si habrá reembolsos o no sobre la práctica que el profesor o la profesora hayan negado a calificar (no es culpa del vendedor).</li><br>
+                       <li>Si el vendedor se entera de que se pasan las prácticas a discreción, decidirá si no venderlas o aumentarlas en precio.</li><br>
+                       <li>El precio puede variar según la práctica que se solicite (entre más alumnos hagan equipo el precio sera más alto).</li><br>
+                       <li>No se brindará asistencia al comprador para importar las prácticas, ya que existe la posibilidad de que la práctica sea cancelada. Se recomienda leer el manual o apoyarse en los videos disponibles para completar este proceso (Recuerda todas las guias de apoyo son gratuitas).</li><br>
+                       <li>Se tendra que pagar todo el efectivo de tal dado caso que no cumplan con todo el efectivo no se les vendera la practica.</li>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>COSTOS</h2>
+                <div class="info-content">
+                    <p>Muchos se preguntan sobre los costos estos van dependiendo de cada practica lo cual no hay costo fijo. <br><br> ¿Porque sus practicas son tan costosas?
+                    <br><br>Buena pregunta. Esto se debe a que te estamos proporcionando todas las herramientas necesarias para exportar y utilizar Send Anywhere. Como todo esto se ofrece bajo total discreción, hemos procurado mantener el máximo nivel de confidencialidad posible. Sin embargo, la situación cambia cuando se trata de costos: en ese caso, será el consumidor quien decida si desea adquirir algún extra o complemento adicional.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>COMPLEMENTOS EXTRAS</h2>
+                <div class="info-content">
+                    <p>Como repasamos en el punto anterior el comprador podra decidir entre 3 versiones graficas para su practica contamos con lo siguiente:
+                      <br><br> <strong>$20 BASICO</strong>
+                      <li><span class="v">✔</span> Diseño Basico.</li>
+                      <li><span class="r">✘</span> Diseño Intermedio.</li> 
+                      <li><span class="r">✘</span> Diseño Avanzado.</li>
+                      <li><span class="r">✘</span> Icono de aplicación unica.</li>
+                      <li><span class="r">✘</span> Descuento de 50% en un Futuro.</li>
+
+                      <br><br> <strong>$40 INTERMEDIO</strong>
+                      <li><span class="r">✘</span> Diseño Basico. </li>
+                      <li><span class="v">✔</span> Diseño Intermedio </li> 
+                      <li><span class="r">✘</span> Diseño Avanzado</li>
+                      <li><span class="r">✘</span> Icono de aplicación unica</li>
+                      <li><span class="v">✔</span> Descuento de 5% en un Futuro.</li>
+
+                      <br><br> <strong>$50 AVANZADO</strong>
+                      <li><span class="r">✘</span> Diseño Basico.</li>
+                      <li><span class="v">✔</span> Diseño Intermedio </li> 
+                      <li><span class="v">✔</span> Diseño Avanzado</li>
+                      <li><span class="v">✔</span> Icono de aplicación unica</li>
+                      <li><span class="v">✔</span> Descuento de 50% en un Futuro.</li>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h2>EN DESARROLLO</h2>
+                <div class="info-content">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2025 Submodulo 1. Todos los derechos reservados.
+        </footer>
+    </div>
+</body>
+</html>
