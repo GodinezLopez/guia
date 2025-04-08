@@ -7,108 +7,306 @@
   <title>INICIO MENU</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.8;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #00eaff;
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    a {
-      color: #7b00ff;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    line-height: 1.8;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #00eaff;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00eaff, transparent);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.section:hover::before {
+    transform: translateX(100%);
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.section img {
+    width: 50%;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: transform 0.4s, filter 0.4s;
+    filter: brightness(0.9);
+}
+
+.n:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2),
+                0 0 20px rgba(138, 43, 226, 0.1),
+                0 0 40px rgba(138, 43, 226, 0.1);
+}
+
+.n:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+a {
+    color: #7b00ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.custom-swal-popup {
+    background: linear-gradient(145deg, #2a2a2a, #333);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.custom-swal-title {
+    color: #00eaff !important;
+}
+
+.custom-swal-content {
+    color: #ffffff !important;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(to top, rgba(30, 30, 30, 0.8), transparent);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.section:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
     .section img {
-      width: 50%;
-      border-radius: 8px;
-      margin-top: 20px;
+        width: 80%;
     }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #888;
+    
+    h1 {
+        font-size: 2rem;
     }
-    .t{
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+}
+
+h2 {
+    color: #00eaff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
         text-align: center;
     }
-    .n{
-        transition: 0.4s;
+
+    .image-container {
+        order: -1;
     }
-    .n:hover{
-        transform: scale(0.96);
-        box-shadow: 0 0 20px #8a2be2, 0 0 40px #8a2be2, 0 0 60px #8a2be2;
+
+    .section img {
+        width: 100%;
+        max-width: 300px;
     }
-    .custom-swal-popup {
-      background-color: #333;
-      color: white;
-    }
-    .custom-swal-title {
-      color: white;
-    }
-    .custom-swal-content {
-      color: #ccc; 
-    }
+}
+
+.section {
+    padding: 40px;
+}
+
+.section:hover .description {
+    color: #ffffff;
+}
+
+.section:hover h2 {
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
   </style>
 </head>
 <body>
   <div class="container">
     <CENTER><h1 class="center">INICIO MENU</h1></CENTER>
-    
-    
+    <div id="spline-container"></div>
+    <script async type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+          const splineViewer = document.createElement('spline-viewer');
+          splineViewer.setAttribute('url', 'https://prod.spline.design/a3qBvu4EzYSxRri0/scene.splinecode');
+          document.getElementById('spline-container').appendChild(splineViewer);
+      });
+  </script>
+  
+    <a href="send.html" onclick="mostrarAlerta(event)" >
+      <div class="section t n">
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <h2>VIDEOS GUIAS</h2>
+                  <p class="description">Aquí encontrarás videos que explican de forma directa y sin rodeos cómo usar Send Anywhere y cómo importar carpetas en Eclipse. Todo al grano y enfocado en lo esencial.</p>
+              </div>
+              <div class="image-container">
+                  <img src="sources/vid.png" alt="Send Anywhere Guide">
+              </div>
+          </div>
+      </div>
+  </a>
+  
     <a href="send.html">
-        <div class="section t n">
-            <p>GUIA COMPLETA PARA USAR SEND ANYWERE.</p>
-            <img src="sources/send.png" alt="Descarga exitosa">
+      <div class="section t n">
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <h2>GUIA COMPLETA PARA USAR SEND ANYWERE</h2>
+                  <p class="description">Aquí encontrarás una guía detallada y fácil de entender para principiantes sobre cómo usar Send Anywhere, explicada de forma clara y sencilla para que puedas utilizarla con total comodidad y discreción.</p>
+              </div>
+              <div class="image-container">
+                  <img src="sources/send.png" alt="Send Anywhere Guide">
+              </div>
           </div>
-    </a>
+      </div>
+  </a>
+  
+  <a href="eclipse.html">
+      <div class="section t n">
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <h2>GUIA COMPLETA PARA IMPORTAR UNA CARPETA EN ECLIPSE</h2>
+                  <p class="description">Aprende a importar proyectos y carpetas en Eclipse IDE de manera correcta. Esta guía cubre todos los pasos necesarios, desde la selección de la carpeta hasta la configuración del proyecto.</p>
+              </div>
+              <div class="image-container">
+                  <img src="sources/i7.png" alt="Eclipse Guide">
+              </div>
+          </div>
+      </div>
+  </a>
 
-    <a href="eclipse.html">
+    <a href="s1.html">
         <div class="section t n">
-            <p>GUIA COMPLETA PARA IMPORTAR UNA CARPETA EN <strong>ECLIPSE</strong>.</p>
-            <img src="sources/i7.png" alt="Descarga exitosa">
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <h2>INFORMACION SUBMODULO 1</h2>
+                  <p class="description">Aquí encontrarás información sobre el Submódulo 1, que te ayudará a entender cómo trabajamos, desde los costos hasta las interfaces gráficas, incluyendo reglas, dudas y respuestas.</p>
+              </div>
+              <div class="image-container">
+                  <img src="sources/s1.png" alt="Send Anywhere Guide">
+              </div>
           </div>
-    </a>
-
-    <a href="s1.html" onclick="mostrarAlerta(event)">
-        <div class="section t n">
-            <p>INFORMACION PRACTICAS SUBMODULO 2.</p>
-            <img src="sources/s1.png" alt="Descarga exitosa">
-          </div>
+        </div>
     </a>
 
     <a href="s2.html" onclick="mostrarAlerta(event)">
-        <div class="section t n">
-            <p>INFORMACION PRACTICAS SUBMODULO 1.</p>
-            <img src="sources/s2.png" alt="Descarga exitosa">
-          </div>
+      <div class="section t n">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2>INFORMACION SUBMODULO 2</h2>
+                <p class="description">NO INFORMACION</p>
+            </div>
+            <div class="image-container">
+                <img src="sources/s2.png" alt="Send Anywhere Guide">
+            </div>
+        </div>
+      </div>
     </a>
+
+    
 
     <script>
       function mostrarAlerta(event) {
