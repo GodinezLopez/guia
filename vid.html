@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="sources/vidi.png" type="image/png">
+  <title>VIDEOS TUTORIALES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    line-height: 1.8;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #00eaff;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00eaff, transparent);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.section:hover::before {
+    transform: translateX(100%);
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.section img {
+    width: 50%;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: transform 0.4s, filter 0.4s;
+    filter: brightness(0.9);
+}
+
+.n:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2),
+                0 0 20px rgba(138, 43, 226, 0.1),
+                0 0 40px rgba(138, 43, 226, 0.1);
+}
+
+.n:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+a {
+    color: #7b00ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.custom-swal-popup {
+    background: linear-gradient(145deg, #2a2a2a, #333);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.custom-swal-title {
+    color: #00eaff !important;
+}
+
+.custom-swal-content {
+    color: #ffffff !important;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(to top, rgba(30, 30, 30, 0.8), transparent);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.section:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .section img {
+        width: 80%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+}
+
+h2 {
+    color: #00eaff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        order: -1;
+    }
+
+    .section img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.section {
+    padding: 40px;
+}
+
+.section:hover .description {
+    color: #ffffff;
+}
+
+.section:hover h2 {
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.video-section {
+      background: #000000;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .video-title {
+        color: #37ff00;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(26, 255, 0, 0.5);
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      border: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <CENTER><h1 class="center">VIDEOS TUTORIALES</h1></CENTER>
+    
+  
+    <div class="video-section">
+        <h2 class="video-title">Guía Send Anywhere</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/pDQ1VEDFryY?vq=hd1080&modestbranding=1&rel=0" 
+            title="Guía Send Anywhere" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      
+      <div class="video-section">
+        <h2 class="video-title">Guía Eclipse</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/iTrc1Rz1uNw?vq=hd1080&modestbranding=1&rel=0" 
+            title="Guía Eclipse" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    <footer>
+      &copy; 2025 Videos tutoriales. Todos los derechos reservados.
+    </footer>
+  </div>
+</body>
+</html>
